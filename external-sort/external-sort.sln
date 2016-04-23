@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{80B2E44F-DCE4-497A-B6AF-119F9A671634}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGenerator", "DataGenerator\DataGenerator.csproj", "{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80B2E44F-DCE4-497A-B6AF-119F9A671634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80B2E44F-DCE4-497A-B6AF-119F9A671634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80B2E44F-DCE4-497A-B6AF-119F9A671634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80B2E44F-DCE4-497A-B6AF-119F9A671634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
