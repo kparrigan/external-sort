@@ -17,7 +17,7 @@ namespace TestApp
         {
             var targetDirectory = ConfigurationManager.AppSettings["SourceDirectory"];
             var files = GetFiles(targetDirectory);
-            _fileCount = files.Count();
+
             PreSort(files); //NOTE - We won't need to do this step in the matcher since each file will be pre-sorted via SQL
 
             var sortedFilePath = Path.Combine(targetDirectory, "sorted_all.txt");
