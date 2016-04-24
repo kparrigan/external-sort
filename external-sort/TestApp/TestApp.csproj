@@ -44,11 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DummyRecord.cs" />
     <Compile Include="DummyRecordComparer.cs" />
     <Compile Include="ExternalMergeSort.cs" />
     <Compile Include="IExternalMergeSort.cs" />
-    <Compile Include="IParseable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

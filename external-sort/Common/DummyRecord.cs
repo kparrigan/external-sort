@@ -58,7 +58,7 @@ namespace TestApp.Common
                 return -1;
             }
 
-            if (this.DateTimeSent == record.DateTimeSent)
+            if (this.DateTimeSent == record.DateTimeSent && this.Data == record.Data)
             {
                 return 0;
             }
