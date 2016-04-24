@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApp;
+using TestApp.Common;
 
 namespace DataGenerator
 {
@@ -20,20 +22,25 @@ namespace DataGenerator
             int.TryParse(ConfigurationManager.AppSettings["fileCount"], out _fileCount);
             int.TryParse(ConfigurationManager.AppSettings["maxRecordCount"], out _maxRecordCount);
 
-            BuildFiles();
+            var files = BuildFiles();
+            PreSort(files); //NOTE - We won't need to do this step in the matcher since each file will be pre-sorted via SQL
+
             Console.WriteLine();
         }
 
-        static void BuildFiles()
+        static IEnumerable<string> BuildFiles()
         {
             const string extension = ".txt";
             var random = new Random((int)DateTime.UtcNow.Ticks);
+            var fileList = new List<string>();
 
             for (int i = 0; i < _fileCount; i++)
             {
-                using (var writer = new StreamWriter(_directory + "/file_" + i + extension))
+                var fileName = _directory + "/file_" + i + extension;
+                using (var writer = new StreamWriter(fileName))
                 {
-                    for (int j = 0; j < random.Next(_maxRecordCount); j++)
+                    var recordCount = random.Next(_maxRecordCount);
+                    for (int j = 0; j < recordCount; j++)
                     {
                         var start = new DateTime(1995, 1, 1);
                         int range = (DateTime.Today - start).Days;
@@ -42,7 +49,40 @@ namespace DataGenerator
                         writer.WriteLine("{0},{1}", randomDate, Guid.NewGuid());
                     }
                 }
-            }            
+
+                fileList.Add(fileName);
+            }
+
+            return fileList;
+        }
+
+        private static void PreSort(IEnumerable<string> fileNames)
+        {
+            var records = new List<DummyRecord>();
+
+            foreach (var fileName in fileNames)
+            {
+                using (var sr = new StreamReader(fileName))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        records.Add(new DummyRecord(line));
+                    }
+                }
+
+                var sortedRecords = records.OrderBy(r => r.DateTimeSent);
+
+                using (var sw = new StreamWriter(fileName, false))
+                {
+                    foreach (var record in sortedRecords)
+                    {
+                        sw.WriteLine(record.ToString());
+                    }
+                }
+
+                records.Clear();
+            }
         }
     }
 }

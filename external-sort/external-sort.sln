@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{80B2E44F-DCE4-497A-B6AF-119F9A671634}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGenerator", "DataGenerator\DataGenerator.csproj", "{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6F01F136-312B-40A5-AB9D-CB676299A02F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8188AD3B-47F3-469D-AA1D-1E1E4424D43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F01F136-312B-40A5-AB9D-CB676299A02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F01F136-312B-40A5-AB9D-CB676299A02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F01F136-312B-40A5-AB9D-CB676299A02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F01F136-312B-40A5-AB9D-CB676299A02F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

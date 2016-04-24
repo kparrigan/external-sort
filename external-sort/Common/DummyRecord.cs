@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestApp
+namespace TestApp.Common
 {
     public class DummyRecord : IComparable<DummyRecord>, IParseable<DummyRecord>
     {
@@ -26,6 +26,7 @@ namespace TestApp
             }
 
             _text = text;
+            Parse();
         }
 
         private void Parse()
@@ -57,7 +58,7 @@ namespace TestApp
                 return -1;
             }
 
-            if (this.DateTimeSent == record.DateTimeSent && this.Data == record.Data)
+            if (this.DateTimeSent == record.DateTimeSent)
             {
                 return 0;
             }
