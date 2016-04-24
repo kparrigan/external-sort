@@ -10,7 +10,8 @@ namespace TestApp
 {
     public sealed class ExternalMergeSort<T> : IExternalMergeSort<T> where T : class, IParseable<T>, new()
     {
-        public void Merge(IEnumerable<string> fileNames, string sortedFilePath, IComparer<T> comparer)
+        public void Merge(IEnumerable<string> fileNames, string sortedFilePath, IComparer<T> comparer,
+            bool cleanup = false)
         {
             if (fileNames == null)
             {
@@ -59,6 +60,14 @@ namespace TestApp
                     {
                         fileReader.Dispose();
                     }
+                }
+            }
+
+            if (cleanup)
+            {
+                foreach (var file in fileNames)
+                {
+                    File.Delete(file);
                 }
             }
         }

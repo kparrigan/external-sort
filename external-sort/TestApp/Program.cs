@@ -23,7 +23,7 @@ namespace TestApp
 
             var stopWatch = new Stopwatch();
             stopWatch.Start();
-            merger.Merge(files, sortedFilePath, new DummyRecordComparer());
+            merger.Merge(files, sortedFilePath, new DummyRecordComparer(), true);
             stopWatch.Stop();
 
             var ts = stopWatch.Elapsed;

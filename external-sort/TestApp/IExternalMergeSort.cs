@@ -8,6 +8,6 @@ namespace TestApp
 {
     public interface IExternalMergeSort<T>
     {
-        void Merge(IEnumerable<string> fileNames, string sortedFilePath, IComparer<T> comparer);
+        void Merge(IEnumerable<string> fileNames, string sortedFilePath, IComparer<T> comparer, bool cleanup);
     }
 }
